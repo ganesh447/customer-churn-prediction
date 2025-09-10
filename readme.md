@@ -76,30 +76,47 @@ The **Two-Class Boosted Decision Trees** model was selected based on:
 ### 🏗️ System Architecture
 
 ```mermaid
-flowchart TD
-    A[📊 Customer Data<br/>CSV/JSON Files] --> B[🔄 Azure Data Factory<br/>ETL Pipeline]
-    B --> C[🤖 ML Endpoint<br/>Boosted Decision Trees]
-    C --> D[📈 Churn Predictions<br/>Probability Scores]
-    D --> E[💾 Azure SQL Database<br/>Prediction Storage]
-    E --> F[📊 Power BI Dashboard<br/>Interactive Reports]
+graph TD
+    A[📊 Customer Data] --> B[🔄 Azure Data Factory]
+    B --> C[🤖 ML Endpoint]
+    C --> D[📈 Churn Predictions]
+    D --> E[💾 Azure SQL Database]
+    E --> F[📊 Power BI Dashboard]
+    F --> G[🔔 Alerts & Notifications]
+    G --> H[👥 Business Users]
     
-    subgraph "☁️ Azure Cloud Platform"
-        B
-        C
-        E
-    end
-    
-    subgraph "📈 Analytics Layer"
-        F
-    end
-    
-    G[🔔 Alerts & Notifications] --> H[👥 Business Users]
-    F --> G
-    
-    style A fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
-    style C fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    style F fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
-    style G fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style A fill:#e3f2fd
+    style C fill:#f3e5f5
+    style F fill:#e8f5e8
+    style G fill:#fff3e0
+```
+
+### 🔄 Alternative Architecture View
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           🏢 Customer Churn Prediction System                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  📊 Data Sources          🔄 Processing           🤖 ML Pipeline             │
+│  ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐       │
+│  │  Customer CRM   │────▶│ Azure Data      │────▶│   ML Endpoint   │       │
+│  │  Transaction DB │     │ Factory (ETL)   │     │ Boosted Trees   │       │
+│  │  Support Logs   │     │ • Validation    │     │ • Real-time     │       │
+│  │  Web Analytics  │     │ • Transform     │     │ • < 100ms       │       │
+│  └─────────────────┘     │ • Quality Check │     │ • Auto-scale    │       │
+│                          └─────────────────┘     └─────────────────┘       │
+│                                                           │                 │
+│  📊 Analytics & Reports                                   ▼                 │
+│  ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐       │
+│  │   Power BI      │◀────│  Azure SQL      │◀────│  Predictions    │       │
+│  │  Dashboards     │     │   Database      │     │ • Probability   │       │
+│  │ • Executive     │     │ • History       │     │ • Confidence    │       │
+│  │ • Operational   │     │ • Audit Trail   │     │ • Metadata      │       │
+│  │ • Customer      │     │ • Performance   │     │ • Timestamps    │       │
+│  └─────────────────┘     └─────────────────┘     └─────────────────┘       │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### 📊 Data Pipeline Flow
