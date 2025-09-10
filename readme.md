@@ -85,10 +85,10 @@ graph TD
     F --> G[🔔 Alerts & Notifications]
     G --> H[👥 Business Users]
     
-    style A fill:#e3f2fd
+    style A fill:#f3e5f5
     style C fill:#f3e5f5
-    style F fill:#e8f5e8
-    style G fill:#fff3e0
+    style F fill:#f3e5f5
+    style G fill:#f3e5f5
 ```
 
 ### 🔄 Alternative Architecture View
