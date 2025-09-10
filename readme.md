@@ -9,8 +9,6 @@
 
 **End-to-End Machine Learning Solution with Azure Cloud Services**
 
-[📊 View Demo](#) • [📖 Documentation](#) • [🚀 Quick Start](#)
-
 </div>
 
 ---
@@ -21,7 +19,7 @@ This project implements a **comprehensive machine learning solution** to predict
 
 > 🏆 **Best Model:** Two-Class Boosted Decision Trees (Highest Accuracy)
 
-### 🎯 Key Achievements
+### Key Achievements
 - ✅ Evaluated 3 ML algorithms in Azure ML Studio
 - ✅ Deployed production-ready real-time endpoint
 - ✅ Built automated ADF pipeline for data processing
@@ -64,34 +62,34 @@ graph LR
     D --> E[Azure SQL Database]
     E --> F[Power BI Dashboard]
     
-    style A fill:#e1f5fe
+    style A fill:#f3e5f5
     style C fill:#f3e5f5
-    style F fill:#e8f5e8
+    style F fill:#f3e5f5
 ```
 
 ### 📋 Implementation Steps
 
-1. **🎓 Model Training & Evaluation**
-   - Train models in Azure Machine Learning Studio
+1. **Model Training & Evaluation**
+   - Train models in Azure Machine Learning Studio Designer 
    - Compare performance metrics across algorithms
    - Select best-performing model for deployment
 
-2. **🚀 Model Deployment**
+2. **Model Deployment**
    - Deploy winning model as real-time endpoint
    - Configure endpoint for high availability
    - Set up authentication and monitoring
 
-3. **⚙️ Pipeline Development**
+3. **Pipeline Development**
    - Build Azure Data Factory pipeline
    - Implement automated data ingestion
    - Configure error handling and retry logic
 
-4. **💾 Data Storage**
+4. **Data Storage**
    - Store scoring results in Azure SQL Database
    - Design optimal database schema
    - Implement data archiving strategy
 
-5. **📊 Visualization**
+5. **Visualization**
    - Connect Power BI to SQL Database
    - Create interactive dashboards
    - Set up automated refresh schedules
@@ -135,7 +133,7 @@ graph LR
 
 ---
 
-## 🔧 Technology Stack
+## Technology Stack
 
 <table>
 <tr>
@@ -180,13 +178,13 @@ graph LR
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│  📊 Raw Data    │───▶│  🔄 ADF Pipeline │───▶│  🤖 ML Endpoint │───▶│  💾 SQL Database│
+│  Raw Data    │───▶│     ADF Pipeline │───▶│   ML Endpoint │───▶│    SQL Database│
 │  (Customer Info)│    │  (ETL Process)   │    │  (Churn Score)   │    │  (Results)      │
 └─────────────────┘    └─────────────────┘    └─────────────────┘    └─────────────────┘
                                                                               │
                                                                               ▼
                                                                     ┌─────────────────┐
-                                                                    │  📊 Power BI    │
+                                                                    │    Power BI    │
                                                                     │  (Dashboards)   │
                                                                     └─────────────────┘
 ```
@@ -209,23 +207,22 @@ graph LR
 
 | Metric | Logistic Regression | Decision Forest | Boosted Trees ⭐ |
 |--------|-------------------|-----------------|------------------|
-| **Accuracy** | 85.2% | 87.6% | **91.3%** |
-| **Precision** | 82.1% | 85.4% | **89.7%** |
-| **Recall** | 79.8% | 83.2% | **88.1%** |
-| **F1-Score** | 80.9% | 84.3% | **88.9%** |
-| **AUC** | 0.847 | 0.892 | **0.923** |
+| **Accuracy** | 70.7% | 86.5% | **90.3%** |
+| **Precision** | 71.5% | 84.2% | **93.1%** |
+| **Recall** | 70.3% | 90.3% | **87.4%** |
+| **F1-Score** | 70.9% | 87.1% | **90.2%** |
+| **AUC** | 0.769 | 0.939 | **0.962** |
 
-> 🎯 **Result:** Boosted Decision Trees achieved the highest performance across all key metrics and was selected for production deployment.
+> **Result:** Boosted Decision Trees achieved the highest performance across all key metrics and was selected for production deployment.
 </details>
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
-- Azure subscription with ML Studio access
-- Power BI Pro license
-- Python 3.8+ environment
+- Azure subscription with ML Studio and Azure Data Factory access
+- Power BI 
 
 ### Quick Setup
 ```bash
@@ -277,24 +274,6 @@ jupyter notebook notebooks/data_exploration.ipynb
 - [ ] **Infrastructure as Code**: ARM templates for Azure resource provisioning
 - [ ] **Advanced Monitoring**: Application Insights integration
 - [ ] **Data Lineage**: Track data provenance and transformations
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
